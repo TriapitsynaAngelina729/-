@@ -1,0 +1,85 @@
+Задача  1
+
+#include <stdio.h>
+int main()
+{
+int a, b, s, p;
+printf("Введите число a");
+scanf("%i", &a);
+printf("Введите число b");
+scanf("%i", &b);
+s = a * b;
+p = 2 * (a + b);
+printf("Площадь равна %i, Периметр равен %i",s,p);
+return 0;
+}
+
+Задача 2
+
+#include <stdio.h>
+int main()
+{
+float pi, d, L;
+pi = 3.14;
+printf("Введите диаметр");
+scanf("%f", &d);
+L = pi * d;
+printf("Длина равна %f",L);
+return 0;
+}
+
+Задача 3
+
+#include <stdio.h>
+int main()
+{
+float a, b, c;
+printf("Введите число a");
+scanf(" %f", &a);
+printf("Введите число b");
+scanf("%f", &b);
+c = ((a + b)/2) ;
+printf ("среднее арифметическое %f",c);
+return 0;
+}
+
+Задача 4
+
+#include <stdio.h>
+int main()
+{
+float a, b, a2, b2, s, r, p, h;
+printf("Введите число a, не равное нулю");
+scanf("%f", &a);
+printf("Введите число b, не равное нулю");
+scanf("%f", &b);
+a2 = a*a;
+b2 = b * b;
+s = a2 + b2;
+r = a2 - b2;
+p = a2 * b2;
+h = a2 / b2;
+printf("Сумма квадратов чисел = %f, Разность квадратов чисел = % f, Произведение квадратов чисел = % f, Частное квадратов чисел = % f",s,r,p,h);
+return 0;
+}
+
+Задача 5
+
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+float a, b, a2, b2, s, r, p, h;
+printf("Введите число a, не равное нулю");
+scanf("%f", &a);
+printf("Введите число b, не равное нулю");
+scanf("%f", &b);
+a2 = a*a;
+b2 = b * b;
+s = abs(a) + abs(b);
+r = abs(a) - abs(b);
+p = abs(a) * abs(b);
+h = abs(a) / abs(b);
+printf("Сумма модулей чисел = %f, Разность модулей чисел = % f, Произведение модулей чисел = % f, Частное модулей чисел = % f",s,r,p,h);
+return 0;
+}
