@@ -79,7 +79,7 @@ b2 = b * b;
 s = abs(a) + abs(b);
 r = abs(a) - abs(b);
 p = abs(a) * abs(b);
-h = abs(a) / abs(b);
+h = (double)abs(a) / (double)abs(b);
 printf("Сумма модулей чисел = %f, Разность модулей чисел = % f, Произведение модулей чисел = % f, Частное модулей чисел = % f",s,r,p,h);
 return 0;
 }
