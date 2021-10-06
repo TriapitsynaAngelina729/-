@@ -87,3 +87,32 @@ return 0;
 
 Задание 6
 
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    float a, b;
+    printf("Введите число A ");
+    scanf ("%f", &a);
+    b = a * a;
+    a = b * b;
+    b = a * a;
+    printf ("Число A в 8ой степени равно %f", b);
+    return 0;
+}
+
+Задание 7
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    float a, b, c;
+    printf("Введите число A ");
+    scanf ("%f", &a);
+    b = a * a * a;
+    c = b * b;
+    a = b * c * c;
+    printf ("Число A в 15ой степени равно %f", a);
+    return 0;
+}
