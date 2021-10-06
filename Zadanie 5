@@ -7,10 +7,10 @@ int main()
     float x1, x2, y1, y2, a, b, a2, b2, s;
     printf ("Введите координату x1 ");
     scanf ("%f", &x1);
-    printf ("Введите координату x2 ");
-    scanf ("%f", &x2);
     printf ("Введите координату y1 ");
     scanf ("%f", &y1);
+    printf ("Введите координату x2 ");
+    scanf ("%f", &x2);
     printf ("Введите координату y2 ");
     scanf ("%f", &y2);
     // Нахождение расстояния с помощью теоремы Пифагора
@@ -27,6 +27,7 @@ int main()
 
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 int main()
 {
     float a, b, c, s1, s2, sum;
@@ -36,8 +37,8 @@ int main()
     scanf ("%f", &b);
     printf ("Введите число C ");
     scanf ("%f", &c);
-    s1 = c - a;
-    s2 = c - b;
+    s1 = abs(c - a);
+    s2 = abs(c - b);
     sum = s1 + s2;
     printf ("Длина отрезка AC равна %f, Длина отрезка BC равна %f, Сумма длин отрезков равна %f", s1, s2, sum);
     return 0;
@@ -47,17 +48,18 @@ int main()
 
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 int main()
 {
     float a, b, c, s1, s2, pr;
     printf ("Введите число A ");
     scanf ("%f", &a);
-    printf ("Введите число C ");
+    printf ("Введите число C (находится между A и B) ");
     scanf ("%f", &c);
     printf ("Введите число B ");
     scanf ("%f", &b);
-    s1 = c - a;
-    s2 = b - c;
+    s1 = abs(c - a);
+    s2 = abs(b - c);
     pr = s1 * s2;
     printf ("Длина отрезка AC равна %f, Длина отрезка BC равна %f, Произведение длин отрезков равно %f", s1, s2, pr);
     return 0;
@@ -67,19 +69,20 @@ int main()
 
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 int main()
 {
     float x1, x2, y1, y2, a, b, p, s;
     printf ("Введите координату x1 ");
     scanf ("%f", &x1);
-    printf ("Введите координату x2 ");
-    scanf ("%f", &x2);
     printf ("Введите координату y1 ");
     scanf ("%f", &y1);
+    printf ("Введите координату x2 ");
+    scanf ("%f", &x2);
     printf ("Введите координату y2 ");
     scanf ("%f", &y2);
-    a = x2 - x1; // Нахождение сторон прямоугольника
-    b = y2 - y1;
+    a = abs(x2 - x1); // Нахождение сторон прямоугольника
+    b = abs(y2 - y1);
     s = a * b;
     p = (a + b) * 2;
     printf ("Площадь прямоугольника равна %f, Периметр прямоугольника равен %f", s, p);
@@ -93,17 +96,17 @@ int main()
 #include <stdlib.h>
 int main()
 {
-    float x1, x2, x3, y1, y2, y3, a, b, c, p, s;
+    float x1, x2, x3, y1, y2, y3, a, b, c, p, s1, s;
     printf ("Введите координату x1 ");
     scanf ("%f", &x1);
-    printf ("Введите координату x2 ");
-    scanf ("%f", &x2);
-    printf ("Введите координату x3 ");
-    scanf ("%f", &x3);
     printf ("Введите координату y1 ");
     scanf ("%f", &y1);
+    printf ("Введите координату x2 ");
+    scanf ("%f", &x2);
     printf ("Введите координату y2 ");
     scanf ("%f", &y2);
+    printf ("Введите координату x3 ");
+    scanf ("%f", &x3);
     printf ("Введите координату y3 ");
     scanf ("%f", &y3);
     // Нахождение сторон треугольника
@@ -113,7 +116,8 @@ int main()
     if ((a+b>c) && (a+c>b) && (b+c>a)) // Проверяем, существует ли треугольник
     {
       p = (double)(a + b + c);
-      s = (double)(abs(((x1 - x3)*(y2 - y3) - (x2 - x3)*(y1 - y3))/2)); // Находим площадь с помощью матрицы
+      s1 = (double)abs((x1 - x3)*(y2 - y3) - (x2 - x3)*(y1 - y3)); // Находим площадь с помощью матрицы
+      s = s1/2;
       printf ("Площадь треугольника равна %f, Периметр треугольника равен %f", s, p);
     }
     else 
