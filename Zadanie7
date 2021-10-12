@@ -86,3 +86,33 @@ int main(){
 
 Задание 6
 
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+int main(){
+float a1, a2, b1, b2, c1, c2, x, y, a, b, c;
+printf ("Найти решение системы линейных уравнений вида:\n");
+printf ("A1*x + B1*y = C1\n");
+printf ("A2*x + B2*y = C2\n");
+printf ("Введите A1 ");
+scanf ("%f", &a1);
+printf ("Введите B1 ");
+scanf ("%f", &b1);
+printf ("Введите C1 ");
+scanf ("%f", &c1);
+printf ("Введите A2 ");
+scanf ("%f", &a2);
+printf ("Введите B2 ");
+scanf ("%f", &b2);
+printf ("Введите C2 ");
+scanf ("%f", &c2);
+a = a1*b2 - b1*a2;
+b = c1*b2 - b1*c2;
+c = a1*c2 - c1*a2;
+x = (float)b/a;
+y = (float)c/a;
+printf ("Ответ: (%f", x);
+printf (";%f", y);
+printf (")" );
+return 0;
+}
