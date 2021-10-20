@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
 int main(){
 int a, b, x, p, nom;
 float a1, b1, c, sum, x1, x2, x3, y1, y2, y3, t, l, m, s, ac, ab;
@@ -10,9 +9,9 @@ scanf ("%i", &a);
 printf ("Введите целое число B ");
 scanf ("%i", &b);
 if (a != b){
-    if (b>a)
-    a = b;
-    else b = a;
+if (b>a)
+a = b;
+else b = a;
 }
 else{
 a = 0;
@@ -27,11 +26,12 @@ printf ("Введите число B ");
 scanf ("%f", &b1);
 printf ("Введите число C ");
 scanf ("%f", &c);
-if (a1<b1 && b1<c)
+if (a1<b1 && a1<c)
 sum = b1 + c;
-else {
-    if (a1>b1 && b1>c) sum = a1 + b1;
-else sum = a1 +c;}
+if (b1<a1 && b1<c) 
+sum = a1 + c;
+if (c<b1 && c<a1)  
+sum = a1 +b1;
 printf ("Сумма двух наибольших чисел равна %f \n", sum);
 printf (" \n");
 
@@ -48,16 +48,16 @@ printf ("Введите первую координату точки C ");
 scanf ("%f", &x3);
 printf ("Введите вторую координату точки C ");
 scanf ("%f", &y3);
-ac = sqrt(abs(x2 - x1)+abs(y2-y1));
-ab = sqrt(abs(x3 - x1)+abs(y3-y1));
-if (ac<ab) 
-{s = ac;
- printf ("Ближе к точке А расположена точка C \n");   
+ab = sqrt(pow(x2-x1,2)+pow(y2-y1,2));
+ac = sqrt(pow(x3-x1,2)+pow(y3-y1,2));
+if (ac<ab) {
+printf ("Ближе к точке А расположена точка C \n");
+printf ("Расстояние от этой точки до точки А равно %f \n", ac);
 }
-else 
-{s = ab;
-printf ("Ближе к точке А расположена точка B \n");}
-printf ("Расстояние от этой точки до точки А равно %f \n", s);
+if(ac>ab) {
+printf ("Ближе к точке А расположена точка B \n");
+printf ("Расстояние от этой точки до точки А равно %f \n", ab);
+}
 printf (" \n");
 
 printf ("Задание 4. Даны координаты точки, не лежащей на координатных осях OX и OY. Определить номер координатной четверти, в которой находится данная точка\n");
